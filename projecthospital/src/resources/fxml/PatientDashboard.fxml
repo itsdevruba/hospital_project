@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="projecthospital.controllers.PatientDashboardController"
+            prefHeight="500" prefWidth="600" style="-fx-background-color: #f5f5f5;">
+
+    <!-- Top - Header -->
+    <top>
+        <VBox style="-fx-background-color: #7B1FA2; -fx-padding: 20;">
+            <Label fx:id="lblWelcome" text="Welcome, Patient"
+                   style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <Label text="Patient Dashboard"
+                   style="-fx-text-fill: white; -fx-font-size: 14px;">
+                <VBox.margin>
+                    <Insets top="5"/>
+                </VBox.margin>
+            </Label>
+        </VBox>
+    </top>
+
+    <!-- Center - Navigation Buttons -->
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <padding>
+                <Insets top="50" right="50" bottom="50" left="50"/>
+            </padding>
+
+            <Button fx:id="btnBrowseDoctors" text="Browse Doctors" onAction="#handleBrowseDoctors"
+                    prefWidth="250" prefHeight="50" style="-fx-font-size: 16px;"/>
+
+            <Button fx:id="btnMyAppointments" text="My Appointments" onAction="#handleMyAppointments"
+                    prefWidth="250" prefHeight="50" style="-fx-font-size: 16px;"/>
+
+            <Button fx:id="btnLogout" text="Logout" onAction="#handleLogout"
+                    prefWidth="250" prefHeight="50" style="-fx-font-size: 16px;"/>
+        </VBox>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="projecthospital.controllers.BookAppointmentController"
+          prefHeight="400" prefWidth="500" alignment="CENTER" hgap="10" vgap="15"
+          style="-fx-background-color: #f5f5f5;">
+
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <!-- Title -->
+    <Label text="Book Appointment" GridPane.columnIndex="0" GridPane.rowIndex="0"
+           GridPane.columnSpan="2" style="-fx-font-size: 20px; -fx-font-weight: bold;">
+        <GridPane.margin>
+            <Insets bottom="20"/>
+        </GridPane.margin>
+    </Label>
+
+    <!-- Doctor -->
+    <Label text="Doctor:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <ComboBox fx:id="cmbDoctor" GridPane.columnIndex="1" GridPane.rowIndex="1"
+              promptText="Select doctor" prefWidth="250"/>
+
+    <!-- Appointment Date -->
+    <Label text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <DatePicker fx:id="dpAppointmentDate" GridPane.columnIndex="1" GridPane.rowIndex="2"
+                promptText="Select date" prefWidth="250"/>
+
+    <!-- Appointment Time -->
+    <Label text="Time:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <ComboBox fx:id="cmbTime" GridPane.columnIndex="1" GridPane.rowIndex="3"
+              promptText="Select time" prefWidth="250"/>
+
+    <!-- Error/Success Label -->
+    <Label fx:id="lblMessage" GridPane.columnIndex="0" GridPane.rowIndex="4"
+           GridPane.columnSpan="2" wrapText="true"/>
+
+    <!-- Buttons -->
+    <HBox GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="2"
+          spacing="10" alignment="CENTER">
+        <GridPane.margin>
+            <Insets top="20"/>
+        </GridPane.margin>
+        <Button fx:id="btnConfirm" text="Confirm Booking" onAction="#handleConfirm"
+                prefWidth="150" style="-fx-font-size: 14px;"/>
+        <Button fx:id="btnCancel" text="Cancel" onAction="#handleCancel"
+                prefWidth="150" style="-fx-font-size: 14px;"/>
+    </HBox>
+
+</GridPane>

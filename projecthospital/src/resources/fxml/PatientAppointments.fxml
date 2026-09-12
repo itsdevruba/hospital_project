@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="projecthospital.controllers.PatientAppointmentsController"
+      prefHeight="600" prefWidth="800" spacing="10" style="-fx-background-color: #f5f5f5;">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Title -->
+    <Label text="My Appointments" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <!-- Appointments Table -->
+    <TableView fx:id="tblAppointments" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colAppointmentId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colDoctor" text="Doctor" prefWidth="200"/>
+            <TableColumn fx:id="colDate" text="Date" prefWidth="120"/>
+            <TableColumn fx:id="colTime" text="Time" prefWidth="100"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="120"/>
+        </columns>
+    </TableView>
+
+    <!-- Buttons -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button fx:id="btnCancelAppointment" text="Cancel Appointment" onAction="#handleCancelAppointment"
+                prefWidth="150" style="-fx-font-size: 14px;"/>
+        <Button fx:id="btnViewNotes" text="View Visit Notes" onAction="#handleViewNotes"
+                prefWidth="150" style="-fx-font-size: 14px;"/>
+        <Button fx:id="btnBack" text="Back to Dashboard" onAction="#handleBack"
+                prefWidth="150" style="-fx-font-size: 14px;"/>
+    </HBox>
+
+</VBox>

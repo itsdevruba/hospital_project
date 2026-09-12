@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="projecthospital.controllers.ManagePatientsController"
+            prefHeight="700" prefWidth="900" style="-fx-background-color: #f5f5f5;">
+
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="10" left="20"/>
+            </padding>
+            <Label text="Manage Patients" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets right="20" left="20"/>
+            </padding>
+
+            <!-- Patients Table -->
+            <TableView fx:id="tblPatients" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colPatientId" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="colFullName" text="Full Name" prefWidth="200"/>
+                    <TableColumn fx:id="colUsername" text="Username" prefWidth="150"/>
+                    <TableColumn fx:id="colEmail" text="Email" prefWidth="180"/>
+                    <TableColumn fx:id="colPhone" text="Phone" prefWidth="120"/>
+                    <TableColumn fx:id="colBloodType" text="Blood Type" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <right>
+        <VBox spacing="8" style="-fx-background-color: white; -fx-padding: 15;">
+            <Label text="Patient Form" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+            <Label text="Username:"/>
+            <TextField fx:id="txtUsername" promptText="Username"/>
+
+            <Label text="Password:"/>
+            <TextField fx:id="txtPassword" promptText="Password"/>
+
+            <Label text="Full Name:"/>
+            <TextField fx:id="txtFullName" promptText="Full Name"/>
+
+            <Label text="Email:"/>
+            <TextField fx:id="txtEmail" promptText="Email"/>
+
+            <Label text="Phone:"/>
+            <TextField fx:id="txtPhone" promptText="Phone"/>
+
+            <Label text="Blood Type:"/>
+            <TextField fx:id="txtBloodType" promptText="Blood Type"/>
+
+            <Label text="Date of Birth:"/>
+            <DatePicker fx:id="dpDateOfBirth" promptText="DOB"/>
+
+            <Label fx:id="lblMessage" wrapText="true"/>
+
+            <!-- Horizontal Button Layout -->
+            <HBox spacing="8" alignment="CENTER">
+                <Button fx:id="btnAdd" text="Add" onAction="#handleAdd"
+                        prefWidth="90" style="-fx-font-size: 11px;"/>
+                <Button fx:id="btnUpdate" text="Update" onAction="#handleUpdate"
+                        prefWidth="90" style="-fx-font-size: 11px;"/>
+            </HBox>
+            <HBox spacing="8" alignment="CENTER">
+                <Button fx:id="btnDelete" text="Delete" onAction="#handleDelete"
+                        prefWidth="90" style="-fx-font-size: 11px;"/>
+                <Button fx:id="btnClear" text="Clear" onAction="#handleClear"
+                        prefWidth="90" style="-fx-font-size: 11px;"/>
+            </HBox>
+            <Button fx:id="btnBack" text="Back" onAction="#handleBack"
+                    prefWidth="188" style="-fx-font-size: 11px;" HBox.hgrow="ALWAYS"/>
+        </VBox>
+    </right>
+
+</BorderPane>
